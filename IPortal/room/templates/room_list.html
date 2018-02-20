@@ -1,0 +1,23 @@
+
+
+<form action={% url 'room:render' %} method="get" id="nameform">
+  
+</form>
+{% for room in rooms %}
+    {% if room.in_queue %}
+<button style="background-color:blue;" id={{ room.room_no }} value={{ room.pk }} type="button" onclick="alert('ROOM SELECTED')">Click Me!</button>
+    {% endif %}
+    {% if room.is_filled %}
+    <button style="background-color:red;" id={{ room.room_no }} type="button" onclick="alert('ROOM SELECTED')">Click Me!</button>
+
+    {% else %}
+<button style="background-color:yellow;" id={{ room.room_no }} type="button" onclick="alert('ROOM SELECTED')">Click Me!</button>
+    {% endif %}
+<br>
+<br>
+{% endfor %}
+<button type="submit" form="nameform" value="Submit">Submit</button>
+
+
+
+
